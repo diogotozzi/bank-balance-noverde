@@ -3,8 +3,6 @@ import unittest
 
 from src.accounts import Accounts
 from src.account import Account
-from unittest.mock import MagicMock
-from unittest.mock import patch
 
 class TestAccounts(unittest.TestCase):
 
@@ -16,14 +14,14 @@ class TestAccounts(unittest.TestCase):
         pass
 
     def set_accounts_file(self):
-        with open('accounts.csv') as f:
+        with open('tests/test_accounts.csv') as f:
             reader = csv.reader(f, delimiter = ',')
             accounts_list = list(reader)
 
         return accounts_list
 
     def set_transfers_file(self):
-        with open('transfers.csv') as f:
+        with open('tests/test_transfers.csv') as f:
             reader = csv.reader(f, delimiter = ',')
             return list(reader)
 
