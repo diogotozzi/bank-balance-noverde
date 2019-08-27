@@ -27,22 +27,22 @@ class TestAccounts(unittest.TestCase):
 
     def test_accounts_id(self):
         accounts = Accounts(self.accounts_list)
-        self.assertIsInstance(accounts.id(345), Account)
+        self.assertIsInstance(accounts.get(345), Account)
 
     def test_accounts_wrong_id(self):
         accounts = Accounts(self.accounts_list)
-        self.assertRaises(KeyError, lambda: accounts.id(000))
+        self.assertRaises(KeyError, lambda: accounts.get(000))
 
     def test_account_funds_before_trasfers(self):
         accounts = Accounts(self.accounts_list)
 
-        self.assertEqual(accounts.id(345).funds, 14428)
+        self.assertEqual(accounts.get(345).funds, 14428)
 
     def test_batch_transfers(self):
         accounts = Accounts(self.accounts_list)
         accounts.batch_transfers(self.transfers_list)
 
-        self.assertEqual(accounts.id(345).funds, 12428)
+        self.assertEqual(accounts.get(345).funds, 12428)
 
     def test_print_all(self):
         accounts = Accounts(self.accounts_list)

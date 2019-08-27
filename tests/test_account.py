@@ -14,7 +14,7 @@ class TestAccount(unittest.TestCase):
     def test_account(self):
         account = Account(999, 10000)
 
-        self.assertEqual(account.id(), 999)
+        self.assertEqual(account.number, 999)
         self.assertEqual(account.funds, 10000)
 
     def test_transfer_deposit(self):
