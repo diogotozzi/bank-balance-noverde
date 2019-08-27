@@ -4,6 +4,9 @@ class Account():
         self.number = int(number)
         self.total_funds = int(total_funds)
 
+    def id(self):
+        return self.number
+
     def transfer(self, amount = 0):
         amount = int(amount)
 

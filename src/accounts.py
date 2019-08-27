@@ -24,3 +24,12 @@ class Accounts():
             amount = i[1]
 
             self.accounts[account_number].transfer(amount)
+
+    def all(self):
+        total_list = []
+
+        for i in self.accounts:
+            account = self.accounts[i]
+            total_list.append([account.id(), account.funds()])
+
+        return total_list

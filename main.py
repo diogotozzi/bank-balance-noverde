@@ -11,6 +11,9 @@ def main(accounts_file, transfers_file):
     accounts = Accounts(accounts_list)
     accounts.batch_transfers(transfers_list)
 
+    for account in accounts.all():
+        print(str(account[0]) + ',' + str(account[1]), end='\n')
+
 def load_accounts(accounts_file):
     with open(accounts_file) as f:
         reader = csv.reader(f, delimiter = ',')
