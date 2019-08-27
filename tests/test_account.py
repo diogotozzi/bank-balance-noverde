@@ -15,43 +15,43 @@ class TestAccount(unittest.TestCase):
         account = Account(999, 10000)
 
         self.assertEqual(account.id(), 999)
-        self.assertEqual(account.funds(), 10000)
+        self.assertEqual(account.funds, 10000)
 
     def test_transfer_deposit(self):
         account = Account(999, 10000)
         account.transfer(1000)
 
-        self.assertEqual(account.funds(), 11000)
+        self.assertEqual(account.funds, 11000)
 
     def test_transfer_debit(self):
         account = Account(999, 10000)
         account.transfer(-1000)
 
-        self.assertEqual(account.funds(), 9000)
+        self.assertEqual(account.funds, 9000)
 
     def test_transfer_negative_deposit(self):
         account = Account(999, -10000)
         account.transfer(1000)
 
-        self.assertEqual(account.funds(), -9000)
+        self.assertEqual(account.funds, -9000)
 
     def test_transfer_negative_debit(self):
         account = Account(999, -10000)
         account.transfer(-1000)
 
-        self.assertEqual(account.funds(), -11500)
+        self.assertEqual(account.funds, -11500)
 
     def test_transfer_zero_deposit(self):
         account = Account(999, -1000)
         account.transfer(1000)
 
-        self.assertEqual(account.funds(), 0)
+        self.assertEqual(account.funds, 0)
 
     def test_transfer_zero_debit(self):
         account = Account(999, 10000)
         account.transfer(-10000)
 
-        self.assertEqual(account.funds(), 0)
+        self.assertEqual(account.funds, 0)
 
 if __name__ == '__main__':
     unittest.main()

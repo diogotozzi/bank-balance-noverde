@@ -11,7 +11,7 @@ class Accounts():
             account_number = int(i[0])
             account_fund = int(i[1])
 
-            account = Account(account_number, account_fund)
+            account = Account(number = account_number, funds = account_fund)
 
             self.accounts[account_number] = account
 
@@ -31,6 +31,6 @@ class Accounts():
 
         for i in self.accounts:
             account = self.accounts[i]
-            total_list.append([account.id(), account.funds()])
+            total_list.append([account.id(), account.funds])
 
         return total_list

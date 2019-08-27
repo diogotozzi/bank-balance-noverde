@@ -36,13 +36,13 @@ class TestAccounts(unittest.TestCase):
     def test_account_funds_before_trasfers(self):
         accounts = Accounts(self.accounts_list)
 
-        self.assertEqual(accounts.id(345).funds(), 14428)
+        self.assertEqual(accounts.id(345).funds, 14428)
 
     def test_batch_transfers(self):
         accounts = Accounts(self.accounts_list)
         accounts.batch_transfers(self.transfers_list)
 
-        self.assertEqual(accounts.id(345).funds(), 12428)
+        self.assertEqual(accounts.id(345).funds, 12428)
 
     def test_print_all(self):
         accounts = Accounts(self.accounts_list)
