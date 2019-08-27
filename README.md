@@ -1,3 +1,19 @@
-python3 main.py accounts.csv transfers.csv
+# Bank Balance
 
-python3 -m unittest discover
+This is a simple bank balance AWS Lambda code.
+
+It receives a small batch of accounts(with their funds) in CSV format. Then a second batch
+with transactions is run. The result of all transactions are shown at terminal
+as a CSV format.
+
+## Run it locally
+
+`python3 main.py accounts.csv transfers.csv`
+
+## Run Deployment script
+
+`python3 deploy.py`
+
+## Run unit tests
+
+`python3 -m unittest discover`
