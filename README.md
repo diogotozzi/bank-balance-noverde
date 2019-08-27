@@ -6,6 +6,9 @@ It receives a small batch of accounts(with their funds) in CSV format. Then a se
 with transactions is run. The result of all transactions are shown at terminal
 as a CSV format.
 
+#### Attention
+You must have Python 3 installed on your machine!
+
 ## Run it locally
 
 `python3 main.py accounts.csv transfers.csv`
