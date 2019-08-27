@@ -6,22 +6,23 @@ class Accounts():
         self.accounts = {}
         self.initialize_accounts(accounts_list)
 
-    def initialize_accounts(self, accounts_list):
+    def initialize_accounts(self, accounts_list =[]):
         for i in accounts_list:
-            account_number = i[0]
-            account_fund = i[1]
+            account_number = int(i[0])
+            account_fund = int(i[1])
 
             account = Account(account_number, account_fund)
 
             self.accounts[account_number] = account
 
-    def id(self, account_number):
+    def id(self, account_number = 0):
+        account_number = int(account_number)
         return self.accounts[account_number]
 
-    def batch_transfers(self, transfers_list):
+    def batch_transfers(self, transfers_list = []):
         for i in transfers_list:
-            account_number = i[0]
-            amount = i[1]
+            account_number = int(i[0])
+            amount = int(i[1])
 
             self.accounts[account_number].transfer(amount)
 
