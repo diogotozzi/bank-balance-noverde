@@ -31,7 +31,7 @@ class TestAccounts(unittest.TestCase):
 
     def test_accounts_wrong_id(self):
         accounts = Accounts(self.accounts_list)
-        self.assertRaises(KeyError, lambda: accounts.get(000))
+        self.assertRaises(Exception, lambda: accounts.get(000))
 
     def test_account_funds_before_trasfers(self):
         accounts = Accounts(self.accounts_list)

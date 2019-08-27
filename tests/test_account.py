@@ -53,5 +53,8 @@ class TestAccount(unittest.TestCase):
 
         self.assertEqual(account.funds, 0)
 
+    def test_wrong_transfer_class(self):
+        self.assertRaises(Exception, lambda: Account(999, -1000, transferClass = 'Transfer'))
+
 if __name__ == '__main__':
     unittest.main()
