@@ -6,6 +6,9 @@ It receives a small batch of accounts(with their funds) in CSV format. Then a se
 with transactions is run. The result of all transactions are shown at terminal
 as a CSV format.
 
+I decided to use the **Strategy Design Pattern** at the *Transfer Class*, so we can change
+the algorithn for transfers at runtime depending on the client's account type: normal, premium, black...
+
 #### Attention
 You must have Python 3 installed on your machine!
 
